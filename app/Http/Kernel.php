@@ -41,6 +41,30 @@ class Kernel extends HttpKernel
             'throttle:60,1',
             'bindings',
         ],
+
+        'sys' => [
+            'web',
+            'is_autor',
+            'is_admin',
+            'is_master',
+        ],
+
+        'manager' => [
+            'web',
+            'is_autor',
+            'is_admin',
+        ],
+
+        'author' => [
+            'web',
+            'is_autor',
+        ],
+
+        'advisor' => [
+            'web',
+            'is_asesor',
+        ],
+
     ];
 
     /**
@@ -61,6 +85,10 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'is_master' => \App\Http\Middleware\MasterMiddleware::class,
+        'is_admin' => \App\Http\Middleware\AdminMiddleware::class,
+        'is_autor' => \App\Http\Middleware\AutorMiddleware::class,
+        'is_asesor' => \App\Http\Middleware\AsesorMiddleware::class,
     ];
 
     /**
