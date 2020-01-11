@@ -13,6 +13,11 @@ Route::get('backup', [
 	'uses'	=> 'Sys\BackupController@index'
 ]);
 
+Route::get('backup/create', [
+	'as'	=> 'backup.create',
+	'uses'	=> 'Sys\BackupController@create'
+]);
+
 
 Route::fallback(function()
 {

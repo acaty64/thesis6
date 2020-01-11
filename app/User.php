@@ -16,7 +16,7 @@ class User extends Authenticatable
 
     // protected $connection = 'login';
 
-    protected $appends = ['tuser', 'tuser_user', 'isMaster', 'isAdmin', 'isAdvisor', 'isDoc'];
+    protected $appends = ['tuser', 'tuser_user', 'isMaster', 'isAdmin', 'isAdvisor', 'isAuhor'];
 
     public function getIsMasterAttribute()
     {

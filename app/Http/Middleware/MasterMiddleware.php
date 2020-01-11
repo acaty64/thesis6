@@ -26,10 +26,10 @@ class MasterMiddleware
             Auth::logout();
             return redirect()->to('login');
         };
-        if($this->auth->user()->tuser != 'Master'){
-            return redirect()->to('home');
+        if($this->auth->user()->isMaster){
+            return $next($request);
         }        
-        return $next($request);
+        return redirect()->to('home');
 
     }
 }

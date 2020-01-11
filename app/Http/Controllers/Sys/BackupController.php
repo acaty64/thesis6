@@ -12,7 +12,7 @@ class BackupController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('master');
+        $this->middleware('is_master');
         Carbon::setLocale('es');
     }
     /**

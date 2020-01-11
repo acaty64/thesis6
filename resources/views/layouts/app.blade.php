@@ -77,7 +77,7 @@
                     Backup
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Backup</a>
+                    <a class="dropdown-item" href="{{ route('backup.index') }}">Backup</a>
                     <a class="dropdown-item" href="#">Another Action</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
@@ -128,5 +128,6 @@
       @yield('content')
     </main>
   </div>
+  @include('layouts.partials.footer')
 </body>
 </html>

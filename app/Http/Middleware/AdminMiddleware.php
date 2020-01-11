@@ -27,8 +27,8 @@ class AdminMiddleware
             return redirect()->to('login');
         }; 
         // if($this->auth->user()->tuser == 'Administrador'){
-        if($this->auth->user()->tuser == 'Administrador' || 
-            $this->auth->user()->tuser == 'Master'){
+        if($this->auth->user()->isAdmin || 
+            $this->auth->user()->isMaster){
             return $next($request);
         }else{
             return redirect()->to('home');
