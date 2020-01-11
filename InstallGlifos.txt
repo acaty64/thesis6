@@ -1,0 +1,36 @@
+Glyphicons
+
+
+**********************************
+https://stackoverflow.com/questions/32612690/bootstrap-4-glyphicons-migration
+**********************************
+
+En el sitio web de Bootstrap puedes leer:
+
+Incluye más de 250 glifos en formato de fuente del conjunto Glyphicon Halflings. Los Halfly de glifos normalmente no están disponibles de forma gratuita, pero su creador los ha puesto a disposición de Bootstrap sin costo alguno. Como agradecimiento, solo le pedimos que incluya un enlace a Glyphicons siempre que sea posible.
+
+Según tengo entendido, puede usar estos 250 glifos sin costo restringido para Bootstrap, pero no limitado a la versión 3 exclusiva. Así que también puedes usarlos para Bootstrap 4.
+
+Copie los archivos de fuentes 
+de: https://github.com/twbs/bootstrap-sass/tree/master/assets/fonts/bootstrap
+en su carpeta ~/proyecto/public/fonts/
+
+Copie el archivo 
+https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_glyphicons.scss
+ en su carpeta ~/bootstrap/scss
+
+Abra su scss /bootstrap/bootstrap.scss
+y escriba el siguiente código SCSS al final de este archivo:
+
+Modificar en archivo: resources/sass/_variables.scss
+
+$bootstrap-sass-asset-helper: false;
+$icon-font-name: 'glyphicons-halflings-regular';
+$icon-font-svg-id: 'glyphicons_halflingsregular';
+$icon-font-path: '../fonts/bootstrap/';
+
+
+Modificar en archivo: resources/sass/app.scss
+@import "../sass/scss/glyphicons";
+
+Ejecutar: npm run dist para recompilar su código con Glyphicons
