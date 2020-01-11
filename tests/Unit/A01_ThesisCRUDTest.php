@@ -57,7 +57,7 @@ class A01_ThesisCRUDTest extends TestCase
             'title' => $title,
             'advisor_id' => $advisor->id,
             'tadvisor_id' => 3
-        ];
+        ];        
         $this->post(route('thesis.store'), $request)
             ->assertStatus(302);
         $this->assertDatabaseHas("theses", [

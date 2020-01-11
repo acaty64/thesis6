@@ -131,7 +131,7 @@ class ThesisController extends Controller
             }
             try {
                 $root = storage_path('app/public');
-                $newDir = $root . '/' . $thesis->id;
+                $newDir = $root . '/' . $thesis->id .'/';
                 if(!file_exists($newDir)){
                     mkdir($newDir, 0777, true);
                 }
